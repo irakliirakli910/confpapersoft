@@ -1,38 +1,285 @@
-.App {
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #0056b3;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  font-style: italic;
+  color: #666;
+  margin-top: 5px;
+}
+
+.module-container {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.module-container h2 {
+  text-align: center;
+  margin-top: 0;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.module-step-container h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #007bff;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.problem-title-header {
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  width: auto;
+}
+
+.next-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.next-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.next-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  width: auto;
+  font-size: 1em;
+}
+
+.reset-btn:hover {
+  background-color: #5a6268;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 1em;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 5px 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.back-btn {
+  background-color: #17a2b8;
+  color: #fff;
+  font-size: 1em;
+  padding: 8px 15px;
+}
+
+.back-btn:hover {
+  background-color: #138496;
+}
+
+.add-problem-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-problem-form input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+
+.problem-items-list {
+  list-style: none;
+  padding: 0;
+}
+
+.problem-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.problem-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.problem-title {
+  font-weight: 600;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+.problem-title:hover {
+  color: #0056b3;
+}
+
+.no-problems-msg {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.list-setup-container {
+  display: flex;
+  gap: 40px;
+}
+
+.list-setup {
+  flex: 1;
+}
+
+.list-setup h4 {
+  color: #0056b3;
+  margin-top: 0;
+}
+
+.list-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.list-item input {
+  flex-grow: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #e9ecef;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+th {
+  background-color: #f1f3f5;
+  font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+td input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.ahp-results {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ahp-results ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.ahp-results li {
+  font-size: 1.1em;
+  background-color: #e9f2ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #b3d9ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.results-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.project-table {
+  margin-top: 20px;
 }
